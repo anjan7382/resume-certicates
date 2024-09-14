@@ -1,0 +1,107 @@
+resource "aws_instance" "terraform-practice" {
+    ami = "ami-03265a0778a880afb"
+    instance_type = "t2.micro" 
+    tags = {
+    Name = "testing-tag"
+  }
+}
+
+resource "aws_instance" "terraform-practice-1" {
+    ami = "ami-03265a0778a880afb"
+    instance_type = "t2.micro" 
+    tags = {
+    Name = "second-tag"
+    Environment = "Testing"
+    sarika = "Developer"
+  }
+}
+
+resource "aws_instance" "terraform-practice-5" {
+    ami = "ami-03265a0778a880afb"
+    instance_type = "t2.micro" 
+    tags = {
+    Name = "second-tag"
+    Environment = "Testing"
+    sarika = "Developer"
+  }
+}
+
+resource "aws_instance" "terraform-practice-8" {
+    ami = "ami-03265a0778a880afb"
+    instance_type = "t2.micro" 
+    tags = {
+    Name = "second"
+    Environment = "Testing"
+    sarika = "Developer"
+  }
+
+
+
+
+resource "aws_key_pair" "key-practice" {
+  key_name   = "deployer-key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDb6qVKXFO5IDHCoebJFaD0lT7X8ds9Vb40e+ZBrYQ4WeUUHvUc95jdRQL2kd5RdOAXKt38Xk7C6GVYyUYQi1x35V/Mld0oh7w6GUjfgytxaxq8jp5rWfWC9Znp6MSpSrlv7Tv5ahu0Q+IL+/H7FXDpplMCsn7CZDFRbMzDB8uMrUArQqBli+h3YSBVVfg0/vGRC3+xmURdTlBYip355asi1cSl9Sf6CODA9hsE2dfACyO1O6vUFu/al8JJ6m463L/SD8hgzEgqGQVGVdAD6ka6MCxP143oIGh3FFgPyyq8LMVRx75JS6dcAuS6XFPwnAI/QY3nBkaG4J5PGazrFWD/wld6bd2Ir+Q8q+icc7MtwNaXSR/2YV67RYGjv9W9a/l92AOXxrJDaCm7ZZ5teeBQVdYir3V5lpnS7WLVousQuCccCZL6TgahwgfAnzvabxxFZypq3N3W94TLLbL8Zzfs9NefTX1AUGz6HAwiBBjllg+uuYmBEqh19P5AwjieGoc= rsbha@RSB"
+  tags = {
+    Name = "key-pairtesting-tag"
+  }
+}
+
+resource "aws_instance" "terraform-practice-3" {
+    ami = "ami-0759f51a90924c166"
+    key_name = "deployer-key"
+    instance_type = "t2.micro" 
+    tags = {
+    Name = "testing-tag"
+  }
+}
+
+
+
+
+Inventory 
+Version control
+Consistent Infra 
+CRUD
+Dependency management
+
+ec2
+subnet
+routetables
+gateways
+vpc
+
+modules 
+cost optimisation
+
+providers 
+
+
+Terraform syntax
+
+resource "what resource" "name we want"{
+
+ parameters
+ 
+ 
+ os
+ keypair
+ sg
+ instance type
+ vpc
+ hd
+
+providers.tf
+
+
+terraform commands
+-------------------
+terraform init
+terraform plan
+terraform apply -auto-approve
+terraform destroy -auto-approve
+
+ssh-keygen -f <file-name>  ----> to create an public-key and private-key
+
+terraform state
+terraform lock
+terraform backup
